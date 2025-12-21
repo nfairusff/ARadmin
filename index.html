@@ -1,0 +1,69 @@
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+    <h1>Admin Persediaan Makanan</h1>
+
+<div>
+    <template id="modalTemplate">
+        <div class="small-modal">
+          <div class="small-modal-content">
+            <span class="close">&times;</span>
+            <p>Modal content</p>
+          </div>
+        </div>
+      </template>
+      
+      <!-- Modal qr-->
+  <div id="qrModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h3>MARKER</h3>
+      <canvas id="qrCanvas"></canvas>
+    </div>
+  </div>
+
+      <div id="modalContainer"></div>  
+
+    
+    </div>
+    <div id="menu">
+        <button onclick="loadatapublik()">⟳</button>
+        <button id="dataBaru" onclick="tombolMuncul(this,'formMakanan')">data baru</button>
+        <button id="tblCari" onclick="tombolMuncul(this,'CariData')">Cari</button>
+        <input id="CariData" placeholder="Pencarian..." style="display: none;">
+    </div>
+
+    <table id="dataMakanan">
+        <tr>
+            <th>Nama Makanan</th>
+            <th>Tanggal Kedaluwarsa</th>
+            <th>Aksi</th>
+            <th>Status</th>
+        </tr>
+        <tr id="formMakanan" style="display: none;background: turquoise;border: solid turquoise;">
+            <td class="no-border">
+                <input type="text" id="nama_makanan" placeholder="Kecap">
+            </td>
+            <td class="no-border">
+                <input type="date" id="tanggal_kedaluwarsa" onkeydown="return false;">
+            </td>
+            <td style="text-align: center;" class="no-border">
+                <button onclick="tombolSimpanData(this)">Simpan</button>
+                <button onclick="tombolUlangData()">Ulang</button>
+                <span class="wrapper" style="display: none;position: relative;"><div class="loader"></div></span>
+            </td>
+        </tr>
+    </table>
+    <div id="wrapper" style="display: none;position: relative;height:400px;width:400px;margin:0 35%">
+        <div style="width: 200px;height:200px;top:50%;left:50%" class="loader"></div>
+    </div>
+<script src="script.js"></script>
+<script src="qr.js"></script>
+</body>
