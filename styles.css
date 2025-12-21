@@ -64,7 +64,7 @@ h1 {
 }
 
 #dataMakanan th {
-  background: #f3f4f6;
+  background: lightcyan;
   padding: 12px;
   font-weight: 600;
   text-align: center;
@@ -201,4 +201,5 @@ h1 {
   justify-content: center;
   align-items: center;
 }
+
 
